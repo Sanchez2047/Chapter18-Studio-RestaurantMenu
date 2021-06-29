@@ -6,10 +6,23 @@ using System.Threading.Tasks;
 
 namespace Chapter_18_Studio
 {
-    static class Menu
+    class Menu
     {
+        public static List<MenuItem> menuItems { get; set; } = new List<MenuItem>();
 
-        public static List<MenuItem> MenuItems { get; set; } = new List<MenuItem>();
+        public static List<DateTime> Dates { get; set; } = new List<DateTime>();
+
+
+
+
+     
+
+
+
+
+
+
+
 
 
 

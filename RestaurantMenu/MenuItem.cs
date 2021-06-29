@@ -14,7 +14,6 @@ namespace Chapter_18_Studio
         public DateTime DateAdded { get; set; }
         public string newItem { get; set; }
         public string ItemIsNew { get; set; }
-
         public string IsNew()
         {
             if (DateAdded > DateTime.Today.AddDays(-7))
@@ -23,6 +22,14 @@ namespace Chapter_18_Studio
             }
             return newItem;
         }
+        public void AddItem(string description, int price, string category, DateTime dateadded)
+        {
+            Description = description;
+            Price = price;
+            Category = category;
+            DateAdded = dateadded;
+        }
+
 
 
 
