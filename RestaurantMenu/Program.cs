@@ -12,39 +12,27 @@ namespace Chapter_18_Studio
         static void Main(string[] args)
         {
 
-            MenuItem pizza = new MenuItem();
-            MenuItem steak = new MenuItem();
-            MenuItem burger = new MenuItem();
-
-            pizza.AddItem("Pizza", 11, "Main Course", DateTime.Now);
-            pizza.ItemIsNew = pizza.IsNew();
-            Menu.menuItems.Add(pizza);
-
-            steak.AddItem("Steak", 35, "Main Course", DateTime.Now);
-            Menu.menuItems.Add(steak);
-            steak.ItemIsNew = pizza.IsNew();
-
-            steak.AddItem("Burger", 35, "Main Course", DateTime.Now);
-            Menu.menuItems.Add(steak);
-            steak.ItemIsNew = pizza.IsNew();
-
-            
-            
-            foreach (var menuItem in Menu.menuItems)
-            {
-                Console.WriteLine($"${menuItem.Description}: {menuItem.Price}: {menuItem.ItemIsNew}");
-            }
+            MenuItem pizza = new MenuItem("Pizza", 11, "Dinner", new DateTime(2021,01,05));
+            MenuItem steak = new MenuItem("Steak", 35, "Dinner", new DateTime(2021, 04, 10));
+            MenuItem burger = new MenuItem("Burger", 35, "Dinner", new DateTime(2019, 05, 19));
+            MenuItem milkShake = new MenuItem("Milk Shake", 8, "Dessert", DateTime.Now);
 
 
+            Menu.AddItem(pizza);
+            Menu.AddItem(steak);
+            Menu.AddItem(burger);
+            Menu.AddItem(milkShake);
 
-            //Console.WriteLine(pizza.DateAdded.Month.);
+            Menu.PrintAll();
+            Menu.LastUpdated();
 
-            //foreach (var Date in Menu.MenuItems)
-            //{
-            //    Menu.Dates.Add(Date.DateAdded.Month);
-            //}
-            //Menu.Dates.Sort();
-            //Console.WriteLine($"Menu last updated{Menu.Dates[0]}.");
+            Console.WriteLine("\n\n***After RemoveItem***\n\n");
+            Menu.RemoveItem(milkShake);
+            Menu.PrintAll();
+            Menu.LastUpdated();
+
+            Console.WriteLine("\n\nPrint One Item\n\n");
+            Menu.PrintOne(milkShake);
 
             Console.ReadLine();
         }

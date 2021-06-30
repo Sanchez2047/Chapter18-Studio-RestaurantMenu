@@ -13,25 +13,21 @@ namespace Chapter_18_Studio
         public string Category { get; set; }
         public DateTime DateAdded { get; set; }
         public string newItem { get; set; }
-        public string ItemIsNew { get; set; }
+
         public string IsNew()
         {
             if (DateAdded > DateTime.Today.AddDays(-7))
             {
-                newItem = "\nMenu Item is new.";
+                newItem = "**NEW**";
             }
             return newItem;
         }
-        public void AddItem(string description, int price, string category, DateTime dateadded)
+        public MenuItem(string description, int price, string category, DateTime dateadded)
         {
             Description = description;
             Price = price;
             Category = category;
             DateAdded = dateadded;
         }
-
-
-
-
     }
 }
