@@ -12,10 +12,10 @@ namespace Chapter_18_Studio
         static void Main(string[] args)
         {
 
-            MenuItem pizza = new MenuItem("Pizza", 11, "Dinner", new DateTime(2021,01,05));
-            MenuItem steak = new MenuItem("Steak", 35, "Dinner", new DateTime(2021, 04, 10));
-            MenuItem burger = new MenuItem("Burger", 35, "Dinner", new DateTime(2019, 05, 19));
-            MenuItem milkShake = new MenuItem("Milk Shake", 8, "Dessert", DateTime.Now);
+            MenuItem pizza = new MenuItem("Pizza", 11.99, "Dinner", new DateTime(2021,01,05));
+            MenuItem steak = new MenuItem("Steak", 34.99, "Dinner", new DateTime(2021, 04, 10));
+            MenuItem burger = new MenuItem("Burger", 8.99, "Dinner", new DateTime(2019, 05, 19));
+            MenuItem milkShake = new MenuItem("Milk Shake", 7.99, "Dessert");
 
 
             Menu.AddItem(pizza);
@@ -26,13 +26,13 @@ namespace Chapter_18_Studio
             Menu.PrintAll();
             Menu.LastUpdated();
 
-            Console.WriteLine("\n\n***After RemoveItem***\n\n");
+            Console.WriteLine("\n***After RemoveItem***\n");
             Menu.RemoveItem(milkShake);
             Menu.PrintAll();
             Menu.LastUpdated();
 
-            Console.WriteLine("\n\nPrint One Item\n\n");
-            Menu.PrintOne(milkShake);
+            Console.WriteLine("\nPrint One Item\n");
+            Menu.PrintOne(steak);
 
             Console.ReadLine();
         }
